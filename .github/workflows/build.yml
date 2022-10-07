@@ -16,10 +16,6 @@ jobs:
       image: himemori/archlinux:latest
     steps:
         - uses: actions/checkout@v3.0.2
-        - name: Install Dependencies
-          run: |
-           ln -s /usr/share/zoneinfo/Asia/Jakarta /etc/localtime && date
-           pacman -Sy --noconfirm git bc inetutils python3 flex bison libc++ libxml2 python-pip zip wget cpio jdk-openjdk tzdata && python3 -m pip install networkx && pip3 install --upgrade gupload
         - name: Build
           run: |
            git clone --depth=1 https://github.com/Himemoria/android_kernel_xiaomi_mt6768 kernel -b twelve
